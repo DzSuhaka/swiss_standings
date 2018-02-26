@@ -181,9 +181,26 @@ def _simulate(n=15):
         sc_t.see(END)
         sc_t.update()
 
+#  def _debug(n=4):
+#      for i in xrange(n):
+#          player = standings_logic.t.get_standings()[i]
+#          sim_w = Tkinter.Toplevel(root)
+#          sim_w.wm_title(player.name)
+#          sim_w.geometry('600x200')
+#          sc_t = ScrolledText(sim_w, font="-*-{}-*-*-*--*-150".format("Lucida Console" if sys.platform == 'win32' else "Monaco" if sys.platform == "darvin" else "Ubuntu Mono"))
+#          sc_t.pack(fill=BOTH, expand=True)
+#          sc_t.insert(END, '{}\n'.format(player.info))
+#          sc_t.see(END)
+#          sc_t.update()
+#          for opp in player.opponents:
+#              sc_t.insert(END, '{} | {}\n'.format(opp.info, opp.mr))
+#              sc_t.see(END)
+#              sc_t.update()
+#  
 
 magicmenu = Menu(menubar, tearoff=0)
 magicmenu.add_command(label="Simulate", command=_simulate)
+#  magicmenu.add_command(label="Debug", command=_debug)
 menubar.add_cascade(label="Simulate", menu=magicmenu)
 
 apiha = heh.HexApiListener()

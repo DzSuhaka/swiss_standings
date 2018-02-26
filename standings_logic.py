@@ -38,7 +38,7 @@ class Player(object):
         self.mr = self.get_match_rate()
 
     def get_match_rate(self, xtra=0):
-        return max(1/3, (self.matches_won+xtra-self.byes)/1.0/((self.matches_played-self.byes) or 1))
+        return max(1/3.0, (self.matches_won+xtra-self.byes)/1.0/((self.matches_played-self.byes) or 1))
 
     @property
     def max_t1(self):
