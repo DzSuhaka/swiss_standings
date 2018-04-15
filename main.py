@@ -106,17 +106,14 @@ class TournamentWindow():
             for widget in self.left_frame.winfo_children():
                 widget.forget()
             
-#        i=0
+        i=0
         for p in standings_logic.t.get_standings():
             if full:
                 self.left_labels[p.name] = Label(self.left_frame)
                 self.left_labels[p.name].bind("<Button-1>", partial(self.change_colors, p))
-            self.left_labels[p.name].configure(text=p.info)
+            i+=1
+            self.left_labels[p.name].configure(text="{:>3}{}".format(i, p.info))
             self.left_labels[p.name].pack()
-
-#            i+=1
-#            if i==8:
-#                Frame(self.left_frame, height=2, bd=1, relief=SUNKEN).pack(fill=X, padx=5, pady=5)
 
 root = Tk(className='Hex Tournament Helper')
 root.title("Hex Tournament Helper")
